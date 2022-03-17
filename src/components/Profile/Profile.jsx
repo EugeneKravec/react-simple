@@ -1,3 +1,4 @@
+import MyPosts from "./MyPosts/MyPosts";
 import c from "./Profile.module.css";
 
 const Profile = () => {
@@ -10,12 +11,7 @@ const Profile = () => {
         />
       </div>
       <div>ava + description</div>
-      <div>
-        My Posts
-        <div>New post</div>
-        <div className={c.item}>post 1</div>
-        <div className={c.item}>post 2</div>
-      </div>
+      <MyPosts />
     </div>
   );
 };
