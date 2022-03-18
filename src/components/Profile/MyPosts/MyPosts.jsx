@@ -2,10 +2,16 @@
 import Post from "./Post/Post";
 
 const MyPosts = () => {
-  const postData = [
+  const posts = [
     { id: 1, message: "Hi, how are you?", likesCount: 34 },
     { id: 2, message: "It's my first post", likesCount: 23 },
+    { id: 2, message: "Blalal", likesCount: 67 },
+    { id: 2, message: "Yo=yoyoyoy", likesCount: 1245 },
   ];
+
+  const postsElements = posts.map((p) => (
+    <Post message={p.message} likesCount={p.likesCount} />
+  ));
 
   return (
     <div>
@@ -16,16 +22,7 @@ const MyPosts = () => {
         <button>Remove</button>
       </div>
       <div>New post</div>
-      <div>
-        <Post
-          message={postData[0].message}
-          likesCount={postData[0].likesCount}
-        />
-        <Post
-          message={postData[1].message}
-          likesCount={postData[1].likesCount}
-        />
-      </div>
+      <div>{postsElements}</div>
     </div>
   );
 };
