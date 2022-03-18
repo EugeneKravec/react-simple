@@ -1,19 +1,21 @@
 .dialogs {
   display: grid;
   grid-template-columns: 2fr 10fr;
-  /* grid-template-rows: 60px 1fr; */
   grid-gap: 5px;
+
+  color: #a35a1f;
 }
 
 .dialogsItems {
   padding: 10px;
 }
 
-.dialogsItems .active {
-  color: aliceblue;
+.active {
+  color: blueviolet;
 }
 
-.dialog {
+.item {
+  color: #fff;
 }
 
 .messages {
