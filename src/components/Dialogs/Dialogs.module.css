@@ -17,7 +17,11 @@
 .item {
   color: #fff;
 }
-
+.item img {
+  margin-right: 5px;
+  width: 40px;
+  border-radius: 50%;
+}
 .messages {
   padding: 10px;
 }

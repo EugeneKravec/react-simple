@@ -1,10 +1,9 @@
-const ProfileInfo = () => {
+import s from "./ProfileInfo.module.css";
+
+const ProfileInfo = (props) => {
   return (
     <div>
-      <img
-        src="https://as2.ftcdn.net/v2/jpg/01/82/53/33/1000_F_182533318_xGVfH4rnm5TrikGUX9zNptWy1Dlw06Vo.jpg"
-        alt="main img"
-      />
+      <img className={s.img} src={props.info.src} alt={props.info.alt} />
       <div>ava + description</div>
     </div>
   );
