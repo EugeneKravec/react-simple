@@ -8,6 +8,7 @@ import Dialogs from "./components/Dialogs/Dialogs";
 
 
 const App = (props) => {
+
   return (
     <BrowserRouter>
       <div className='app-wrapper'>
@@ -15,17 +16,15 @@ const App = (props) => {
         <Navbar />
         <div className='app-wrapper-content'>
           <Routes>
-            <Route path="/profile*" element={<Profile posts={props.posts} />} />
-            <Route path="/dialogs*" element={<Dialogs dialogs={props.dialogs} messages={props.messages} />} />
+            <Route path="/profile/*"
+              element={<Profile state={props.state.profilePage} />} />
+            <Route path="/dialogs/*"
+              element={<Dialogs state={props.state.messagesPage} />} />
           </Routes>
-          {/* <Profile /> */}
-          {/* <Dialogs /> */}
         </div>
-
       </div >
     </BrowserRouter>
   );
 }
-
 
 export default App;
