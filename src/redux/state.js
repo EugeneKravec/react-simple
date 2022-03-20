@@ -1,3 +1,5 @@
+import { rerenderEntireTree } from "../render"
+
 const state = {
     profilePage: {
         profileInfo: { id: 1, alt: "main img", src: "https://as2.ftcdn.net/v2/jpg/01/82/53/33/1000_F_182533318_xGVfH4rnm5TrikGUX9zNptWy1Dlw06Vo.jpg" },
@@ -7,7 +9,8 @@ const state = {
             { id: 2, message: "It's my first post", likesCount: 23 },
             { id: 3, message: "Blalal", likesCount: 67 },
             { id: 4, message: "Yo=yoyoyoy", likesCount: 1245 },
-        ]
+        ],
+        newPostText: "Kamasutra"
     },
     messagesPage: {
         dialogs: [
@@ -51,6 +54,13 @@ export const addPost = (postMessage) => {
         likesCount: 0
     }
     state.profilePage.posts.push(newPost)
+    rerenderEntireTree(state);
+}
+
+export const updateNewPostText = (newText) => {
+    state.profilePage.newPostText = newText;
+    rerenderEntireTree(state);
+
 }
 
 export default state;
