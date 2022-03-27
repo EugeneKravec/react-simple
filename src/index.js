@@ -9,16 +9,12 @@ import './index.css';
 import store from './redux/state';
 
 
-
-
-
-const rerenderEntireTree = () => {
+const rerenderEntireTree = (state) => {
     ReactDOM.render(
         <React.StrictMode>
             <App
-                state={store.getState()}
-                addPost={store.addPost.bind(store)}
-                updateNewPostText={store.updateNewPostText.bind(store)}
+                state={state}
+                dispatch={store.dispatch.bind(store)}
             />
         </React.StrictMode>,
         document.getElementById('root')
