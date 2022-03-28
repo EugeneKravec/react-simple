@@ -1,7 +1,7 @@
 import s from "./Dialogs.module.css";
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
-import { updateNewMessageBodyCreator, sendMessageCreator } from "../../redux/state";
+import { updateNewMessageBodyCreator, sendMessageCreator } from "../../redux/messages-reducer";
 
 const Dialogs = (props) => {
   let state = props.store.getState().messagesPage
@@ -30,9 +30,8 @@ const Dialogs = (props) => {
     <div className={s.dialogs}>
       <div className={s.dialogsItems}>{dialogsElements}
       </div>
-      <div className="messages">{messagesElements}
-      </div>
-      <div>
+      <div className="messages">
+        <div>{messagesElements}</div>
         <div>
           <textarea
             cols={45}
@@ -43,8 +42,15 @@ const Dialogs = (props) => {
           >
           </textarea>
         </div>
-        <div> <button onClick={onMessageClick} >add message</button> </div>
+        <div>
+          <button
+            onClick={onMessageClick}
+          >
+            add message
+          </button>
+        </div>
       </div>
+
     </div>
   );
 };
