@@ -1,15 +1,15 @@
-// import s from "./Friends.module.css";
+import c from "./Friends.module.css";
 
-// const Friends = (props) => {
-//   const friends = props.state.sidebar.map((f) => (
-//     <Friend name={f.name} img={f.img} />
-//   ));
+const Friends = () => {
+    return (
+        <h2 className={c.h}>
+            <img
+                src="https://tynetheatreandoperahouse.uk/wp-content/uploads/2020/01/400x142-3.jpg"
 
-//   return (
-//     <div>
-//       <h3>Friends</h3>
-//       <div>{friends}</div>
-//     </div>
-//   );
-// };
-// export default Friends;
+                alt="logo"
+            />
+        </h2>
+    );
+};
+
+export default Friends;
